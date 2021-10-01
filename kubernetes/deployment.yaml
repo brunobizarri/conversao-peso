@@ -1,0 +1,23 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convert-weigth
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      aplicacao: convert-weigth
+  template:
+    metadata:
+      labels:
+        aplicacao: convert-weigth
+    spec:
+      containers:
+        - name: convert-weigth
+          image: brunobizarri/convert-weigth:1.1
+          ports:
+            - containerPort: 80
+
+...

@@ -1,0 +1,14 @@
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: convert-weigth
+spec:
+  selector:
+    aplicacao: convert-weigth
+  ports:
+    - port: 90
+      targetPort: 80
+      nodePort: 30001
+  type: NodePort
